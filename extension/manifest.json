@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "TECNOINCUBADORA",
+  "description": "Painel de acesso à plataforma TECNOINCUBADORA — login, dashboard e APIs via HTTPS.",
+  "version": "1.0.0",
+  "permissions": ["storage", "activeTab", "alarms"],
+  "host_permissions": ["https://api.tecnoincubadora.com/*"],
+  "background": {
+    "service_worker": "src/background/background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_title": "TECNOINCUBADORA"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

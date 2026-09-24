@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="popup.css">
+  <title>TECNOINCUBADORA</title>
+</head>
+<body>
+  <header class="header">
+    <img src="../../icons/icon48.png" alt="TECNOINCUBADORA" class="logo">
+    <h1>TECNOINCUBADORA</h1>
+  </header>
+
+  <main>
+    <section id="view-login" class="view">
+      <form id="form-login">
+        <label for="login-username">Utilizador / Email</label>
+        <input type="text" id="login-username" autocomplete="username" required>
+
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" autocomplete="current-password" required>
+
+        <button type="submit" id="btn-login">Entrar</button>
+      </form>
+      <p id="login-error" class="error hidden"></p>
+      <p id="login-info" class="info hidden"></p>
+    </section>
+
+    <section id="view-dashboard" class="view hidden">
+      <dl class="profile">
+        <dt>Utilizador</dt>
+        <dd id="profile-user">—</dd>
+        <dt>Email</dt>
+        <dd id="profile-email">—</dd>
+      </dl>
+
+      <h2>Dashboard</h2>
+      <div id="dashboard-data" class="card">
+        <p id="dashboard-status">A carregar…</p>
+      </div>
+
+      <div class="actions">
+        <button id="btn-refresh" class="secondary">Atualizar</button>
+        <button id="btn-logout" class="danger">Sair</button>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
