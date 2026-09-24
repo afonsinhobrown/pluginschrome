@@ -1,4 +1,4 @@
-export const API_BASE_URL = "https://api.tecnoincubadora.com";
+export const API_BASE_URL = "https://tecnoincubadora-api.onrender.com";
 export const API_BASE_OVERRIDE_KEY = "tecnoincubadora.apiBaseUrl";
 
 export const ME_PATH = "/api/users/me";
