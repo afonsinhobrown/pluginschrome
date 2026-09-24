@@ -1,6 +1,6 @@
 import { api } from "../lib/api.js";
 import { getAuth, login, logout } from "../lib/auth.js";
-import { ME_ENDPOINT } from "../lib/config.js";
+import { ME_PATH } from "../lib/config.js";
 
 const formLogin = document.getElementById("form-login");
 const btnLogin = document.getElementById("btn-login");
@@ -62,7 +62,7 @@ async function loadDashboard() {
   dashboardStatus.textContent = "A carregar…";
   dashboardData.classList.remove("hidden");
   try {
-    const me = await api.get(ME_ENDPOINT);
+    const me = await api.get(ME_PATH);
     profileUser.textContent = me?.name ?? me?.username ?? me?.email ?? "—";
     profileEmail.textContent = me?.email ?? "—";
     dashboardStatus.textContent = "Conectado à API.";

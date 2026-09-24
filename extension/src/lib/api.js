@@ -1,9 +1,10 @@
-import { API_BASE_URL } from "./config.js";
+import { getApiBaseUrl } from "./config.js";
 import { getValidAuth, logout } from "./auth.js";
 
 async function request(path, { method = "GET", body, headers = {} } = {}) {
   const auth = await getValidAuth();
-  const res = await fetch(API_BASE_URL + path, {
+  const base = await getApiBaseUrl();
+  const res = await fetch(base + path, {
     method,
     headers: {
       "Content-Type": "application/json",

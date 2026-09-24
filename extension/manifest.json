@@ -4,7 +4,11 @@
   "description": "Painel de acesso à plataforma TECNOINCUBADORA — login, dashboard e APIs via HTTPS.",
   "version": "1.0.0",
   "permissions": ["storage", "activeTab", "alarms"],
-  "host_permissions": ["https://api.tecnoincubadora.com/*"],
+  "host_permissions": [
+    "https://api.tecnoincubadora.com/*",
+    "http://localhost/*",
+    "http://127.0.0.1/*"
+  ],
   "background": {
     "service_worker": "src/background/background.js",
     "type": "module"

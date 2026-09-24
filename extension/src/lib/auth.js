@@ -1,8 +1,7 @@
 import {
   AUTH_STORAGE_KEY,
-  LOGIN_ENDPOINT,
-  REFRESH_ENDPOINT,
   TOKEN_REFRESH_MARGIN_MS,
+  getApiBaseUrl,
 } from "./config.js";
 
 function normalizeAuth(data) {
@@ -38,7 +37,8 @@ export function getAuth() {
 
 async function doRefresh(auth) {
   if (!auth?.refreshToken) return null;
-  const res = await fetch(REFRESH_ENDPOINT, {
+  const base = await getApiBaseUrl();
+  const res = await fetch(`${base}/api/auth/refresh`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ refresh_token: auth.refreshToken }),
@@ -55,7 +55,8 @@ export async function refreshToken() {
 }
 
 export async function login(credentials) {
-  const res = await fetch(LOGIN_ENDPOINT, {
+  const base = await getApiBaseUrl();
+  const res = await fetch(`${base}/api/auth/login`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(credentials),
